@@ -43,7 +43,7 @@
 <br/>
 
 
-
+[![Top Langs](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=anuraghazra)](https://github.com/anuraghazra/github-readme-stats)
 <p align="left">
   <a href="https://github.com/JamesonHenrique?tab=repositories" target="_blank"><img alt="Todos os repositorios" title="tODOS OS REPOSITORIOS" src="https://img.shields.io/badge/-All%20Repos-2962FF?style=for-the-badge&logo=koding&logoColor=white"/></a>
 </p>
@@ -69,6 +69,5 @@
 
   <br/>
 </a>
-[![Top Langs](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=anuraghazra)](https://github.com/anuraghazra/github-readme-stats)
 
 ![Jameson Graph](https://github-readme-activity-graph.vercel.app/graph?username=JamesonHenrique&custom_title=Jameson%20Henrique%20GitHub%20Activity%20Graph&bg_color=0D1117&color=7F3FBF&line=7F3FBF&point=7F3FBF&area_color=FFFFFF&title_color=FFFFFF&area=true)
