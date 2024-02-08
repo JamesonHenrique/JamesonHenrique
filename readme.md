@@ -69,6 +69,7 @@
 
   <br/>
 </a>
-[![Top Langs](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=JamesonHenrique)]
+
 
 ![Jameson Graph](https://github-readme-activity-graph.vercel.app/graph?username=JamesonHenrique&custom_title=Jameson%20Henrique%20GitHub%20Activity%20Graph&bg_color=0D1117&color=7F3FBF&line=7F3FBF&point=7F3FBF&area_color=FFFFFF&title_color=FFFFFF&area=true)
+[![Top Langs](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=JamesonHenrique)]
