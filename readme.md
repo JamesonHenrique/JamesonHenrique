@@ -43,7 +43,7 @@
 <br/>
 
 
-[![Top Langs](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=JamesonHenrique)]
+
 <p align="left">
   <a href="https://github.com/JamesonHenrique?tab=repositories" target="_blank"><img alt="Todos os repositorios" title="tODOS OS REPOSITORIOS" src="https://img.shields.io/badge/-All%20Repos-2962FF?style=for-the-badge&logo=koding&logoColor=white"/></a>
 </p>
@@ -66,7 +66,7 @@
 
 <a> 
     <a href="https://github.com/JamesonHenrique><img alt="Jameson Github Stats" src="https://denvercoder1-github-readme-stats.vercel.app/api?username=JamesonHenrique&show_icons=true&count_private=true&theme=react&border_color=7F3FBF&bg_color=0D1117&title_color=F85D7F&icon_color=F8D866" height="192px" width="49.5%"/></a>
-
+[![Top Langs](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=JamesonHenrique)]
   <br/>
 </a>
 
