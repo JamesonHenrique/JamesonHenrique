@@ -13,7 +13,7 @@
 
 <p align="center"> 
     <br>
-    「 Sou um programador full stack Spring Angular</b> 」
+    「 Sou um programador full stack spring angular</b> 」
     <br>
     <br>
   </samp>
