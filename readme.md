@@ -41,14 +41,7 @@
 <br/>
 
 
-### 🚀 Sobre Mim:
 
-- 🌱 Atualmente estou aprendendo **DevOps e AWS**
-- 💬 Pergunte-me sobre **Java, Spring Boot, Angular, TypeScript e JavaScript **
-- 📫 Como me encontrar: **[LinkedIn](https://www.linkedin.com/in/jamesonhenrique/)**
-- ⚡ Fato curioso: **Reslver bugs é comigo mesmo**
-
----
 
 <p align="left">
   <a href="https://github.com/JamesonHenrique?tab=repositories" target="_blank"><img alt="Todos os repositorios" title="tODOS OS REPOSITORIOS" src="https://img.shields.io/badge/-All%20Repos-2962FF?style=for-the-badge&logo=koding&logoColor=white"/></a>
@@ -58,6 +51,17 @@
 <hr/>
 <br/>
 
+### 🚀 Sobre Mim:
+
+- 🌱 Atualmente estou aprendendo **DevOps e AWS**
+- 💬 Pergunte-me sobre **Java, Spring Boot, Angular, TypeScript e JavaScript **
+- 📫 Como me encontrar: **[LinkedIn](https://www.linkedin.com/in/jamesonhenrique/)**
+- ⚡ Fato curioso: **Reslver bugs é comigo mesmo**
+
+---   
+<br/>
+<hr/>
+<br/>
 ### 📊 Estatísticas do GitHub:
 <div align="center">
 <a href="https://github.com/JamesonHenrique">
