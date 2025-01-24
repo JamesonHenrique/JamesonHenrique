@@ -25,10 +25,17 @@
 </p>
 
 <br/>
-<br/>
-<br/>
 
-## Linguagens a qual uso
+### 🚀 Sobre Mim:
+
+- 🌱 Atualmente estou aprendendo **DevOps e AWS**
+- 💬 Pergunte-me sobre **Java, Spring Boot, Angular, TypeScript e JavaScript **
+- 📫 Como me encontrar: **[LinkedIn](https://www.linkedin.com/in/jamesonhenrique/)**
+- ⚡ Fato curioso: **Reslver bugs é comigo mesmo**
+
+---
+
+### 💼 Tecnologias e Ferramentas:
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
@@ -51,9 +58,9 @@
 <hr/>
 <br/>
 
-
+### 📊 Estatísticas do GitHub:
 <div align="center">
-<a href="https://github.com/ali-bouali">
+<a href="https://github.com/JamesonHenrique">
 <img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=JamesonHenrique&theme=2077" height="180em" />
 <img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=JamesonHenrique&theme=2077" height="180em" />
 <img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=JamesonHenrique&theme=2077" height="180em" />
