@@ -59,9 +59,7 @@
 - ⚡ Fato curioso: **Reslver bugs é comigo mesmo**
 
 ---   
-<br/>
-<hr/>
-<br/>
+
 ### 📊 Estatísticas do GitHub:
 <div align="center">
 <a href="https://github.com/JamesonHenrique">
