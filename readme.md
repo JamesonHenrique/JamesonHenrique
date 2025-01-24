@@ -53,7 +53,8 @@
 - 📫 Como me encontrar: **[LinkedIn](https://www.linkedin.com/in/jamesonhenrique/)**
 - ⚡ Fato curioso: **Reslver bugs é comigo mesmo**
 
----   
+<br/>
+<hr/>
 <br/>
 
 ### 📊 Estatísticas do GitHub:
