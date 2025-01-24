@@ -51,7 +51,7 @@
 - 🌱 Atualmente estou aprendendo **DevOps e AWS**
 - 💬 Pergunte-me sobre **Java, Spring Boot, Angular, TypeScript e JavaScript **
 - 📫 Como me encontrar: **[LinkedIn](https://www.linkedin.com/in/jamesonhenrique/)**
-- ⚡ Fato curioso: **Reslver bugs é comigo mesmo**
+- ⚡ Fato curioso: **Resolver bugs é comigo mesmo**
 
 <br/>
 <hr/>
