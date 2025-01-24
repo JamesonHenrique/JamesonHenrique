@@ -69,7 +69,16 @@
   <br/>
 </a>
 
+<div align="center">
+<a href="https://github.com/ali-bouali">
+<img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=JamesonHenrique&theme=2077" height="180em" />
+<img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=JamesonHenrique&theme=2077" height="180em" />
+<img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=JamesonHenrique&theme=2077" height="180em" />
+<img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=JamesonHenrique&theme=2077" height="180em" />
+<img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=JamesonHenrique&theme=2077" height="180em" />
+</div>
 
+<p style="text-align: center;"><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=ali-bouali&" alt="ali-bouali" /></p>
 ![Jameson Graph](https://github-readme-activity-graph.vercel.app/graph?username=JamesonHenrique&custom_title=Jameson%20Henrique%20GitHub%20Activity%20Graph&bg_color=0D1117&color=7F3FBF&line=7F3FBF&point=7F3FBF&area_color=FFFFFF&title_color=FFFFFF&area=true)
 ![Jameson GitHub stats](https://github-readme-stats.vercel.app/api?username=JamesonHenrique&show_icons=true&theme=transparent)
 [![Top Langs](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=JamesonHenrique&show_icons=true&theme=transparent)]
