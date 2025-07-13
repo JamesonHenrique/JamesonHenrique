@@ -46,16 +46,7 @@ public class SobreMim {
 |-------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 
 </div>
-
-## 🌟 **Projetos Destacados**
-
-🔗 [**Sistema de Gestão Empresarial**](https://github.com/JamesonHenrique/gestao-empresarial)  
-*Java + Spring Boot + Angular*  
-*Solução completa para automação de processos corporativos*
-
-🔗 [**Plataforma E-learning**](https://github.com/JamesonHenrique/e-learning-platform)  
-*Microserviços + MongoDB*  
-*Plataforma de cursos online com análise de progresso*
+*
 
 ## 📫 **Vamos Conectar!**
 
@@ -63,11 +54,6 @@ public class SobreMim {
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:seuemail@gmail.com)
 
 
-<div align="center">
-  
-![Snake Animation](https://github.com/JamesonHenrique/JamesonHenrique/blob/output/github-contribution-grid-snake.svg)
-
-</div>
 
 <p align="center"> 
   <img src="https://komarev.com/ghpvc/?username=JamesonHenrique&color=7D40E7&style=flat" alt="Profile views" /> 
