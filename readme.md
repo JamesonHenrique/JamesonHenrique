@@ -54,15 +54,15 @@
 - 🌱 Aprendendo **DevOps, AWS e Arquitetura de Software**  
 - 💡 Curiosidade: **Adoro resolver problemas complexos enquanto ouço Lo-Fi**  
 - 📫 Me encontre no **[LinkedIn](https://www.linkedin.com/in/jamesonhenrique/)**  
-- ⚡ Fun fact: **Meu IDE tem tema roxo, meu terminal tem tema roxo... adivinha minha cor favorita?**  
+
 
 ---
 
 ## 🎨 **Projetos Destacados**  
 
-🔹 **[Sistema de Gestão em Spring/Angular](https://github.com/JamesonHenrique/projeto-x)**  
-🔹 **[API RESTful com Java](https://github.com/JamesonHenrique/api-restful)**  
-🔹 **[Aplicação Cloud com AWS](https://github.com/JamesonHenrique/aws-project)**  
+🔹 **[Newgram](https://github.com/JamesonHenrique/Newgram)**  
+🔹 **[Algamoney](https://github.com/JamesonHenrique/Algamoney)**  
+🔹 **[WaveChat](https://github.com/JamesonHenrique/WaveChat)**  
 
 📌 **[Todos os Repositórios](https://github.com/JamesonHenrique?tab=repositories)**  
 
