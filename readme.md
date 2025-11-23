@@ -52,7 +52,7 @@
 ## 💜 **Sobre Mim**  
 
 - 🔭 Atualmente trabalhando com **Spring Boot e Angular**  
-- 🌱 Aprendendo **DevOps, AWS e Boas Práticas de Software**  
+- 🌱 Voltando a programar depois de meses
 - 📫 Me encontre no **[LinkedIn](https://www.linkedin.com/in/jamesonhenrique/)**  
 
 ---
