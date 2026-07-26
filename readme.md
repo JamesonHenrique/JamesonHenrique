@@ -10,11 +10,10 @@
 
 ## 👨‍💻 Sobre mim
 
-Sou desenvolvedor Full Stack, gosto de transitar entre frontend e backend e de entender o produto como um todo — não só a parte que estou codando no momento.
+Sou desenvolvedor Full Stack, gosto de transitar entre frontend e backend e de entender o produto como um todo.
 
 - 🔭 No momento, trabalhando com **Spring Boot** no backend e **Angular** no frontend
 - 🌱 Retomando o ritmo de código depois de um tempo parado, com foco em consistência
-- 💬 Curto conversar sobre arquitetura de APIs, boas práticas de código e produtividade no desenvolvimento
 - 📫 Me encontre no [LinkedIn](https://www.linkedin.com/in/jamesonhenrique/)
 
 <br>
