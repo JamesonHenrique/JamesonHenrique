@@ -2,7 +2,7 @@
 
 # Olá, eu sou o Jameson 👋
 
-![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=500&color=9929EA&width=490&lines=Full+Stack+Developer;Angular+%2B+Spring+Boot;Sempre+aprendendo+algo+novo)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=500&color=9929EA&width=490&lines=Full+Stack+Developer;Angular+%7C+Java+%7C+Spring+%7C+Python;Sempre+aprendendo+algo+novo)](https://git.io/typing-svg)
 
 </div>
 
@@ -10,21 +10,20 @@
 
 ## 👨‍💻 Sobre mim
 
-Sou desenvolvedor Full Stack com foco em construir aplicações web robustas do front ao back — do Angular ao Spring Boot, passando por bancos relacionais e não relacionais.
+Sou desenvolvedor Full Stack, gosto de transitar entre frontend e backend e de entender o produto como um todo — não só a parte que estou codando no momento.
 
-- 🔭 Atualmente trabalhando com **Spring Boot** e **Angular** em projetos pessoais e profissionais
-- 🌱 Retomando o ritmo de código depois de uma pausa — focado em consistência e em fechar projetos até o fim
-- 🧠 Estudando mais a fundo **arquitetura de APIs** e boas práticas com **AWS**
-- 💬 Gosto de trocar ideia sobre backend, arquitetura de software e boas práticas de deploy
-- 📫 Me encontre no **[LinkedIn](https://www.linkedin.com/in/jamesonhenrique/)**
+- 🔭 No momento, trabalhando com **Spring Boot** no backend e **Angular** no frontend
+- 🌱 Retomando o ritmo de código depois de um tempo parado, com foco em consistência
+- 💬 Curto conversar sobre arquitetura de APIs, boas práticas de código e produtividade no desenvolvimento
+- 📫 Me encontre no [LinkedIn](https://www.linkedin.com/in/jamesonhenrique/)
 
 <br>
 
-## 🛠 Tecnologias & Ferramentas
+## 🛠 Stack técnica
 
 <table>
 <tr>
-<td valign="top" width="33%">
+<td valign="top" width="25%">
 
 **Frontend**
 
@@ -35,7 +34,7 @@ Sou desenvolvedor Full Stack com foco em construir aplicações web robustas do 
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
 </td>
-<td valign="top" width="33%">
+<td valign="top" width="25%">
 
 **Backend**
 
@@ -44,13 +43,19 @@ Sou desenvolvedor Full Stack com foco em construir aplicações web robustas do 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
 </td>
-<td valign="top" width="33%">
+<td valign="top" width="25%">
 
-**Dados & Infra**
+**Banco de Dados**
 
 ![Postgres](https://img.shields.io/badge/PostgreSQL-204E78?style=for-the-badge&logo=postgresql&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+
+</td>
+<td valign="top" width="25%">
+
+**DevOps & Cloud**
+
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
@@ -63,13 +68,15 @@ Sou desenvolvedor Full Stack com foco em construir aplicações web robustas do 
 
 ## 🎨 Projetos em destaque
 
-| Projeto | 
-|---|
-| 🔹 **[Newgram](https://github.com/JamesonHenrique/Newgram)** 
-| 🔹 **[Algamoney](https://github.com/JamesonHenrique/Algamoney)**
-| 🔹 **[WaveChat](https://github.com/JamesonHenrique/WaveChat)** 
+| Projeto | Descrição |
+|---|---|
+| 🔹 **[Newgram](https://github.com/JamesonHenrique/Newgram)** | Clone de rede social inspirado no Instagram, com foco em autenticação e feed de posts |
+| 🔹 **[Algamoney](https://github.com/JamesonHenrique/Algamoney)** | Aplicação de controle financeiro pessoal, com API REST em Java/Spring |
+| 🔹 **[WaveChat](https://github.com/JamesonHenrique/WaveChat)** | Aplicação de chat em tempo real explorando comunicação via WebSockets |
 
-📌 **[Ver todos os repositórios →](https://github.com/JamesonHenrique?tab=repositories)**
+📌 Veja **[todos os repositórios](https://github.com/JamesonHenrique?tab=repositories)**
+
+> Ajuste as descrições acima se algum detalhe não bater exatamente com o que o projeto faz hoje.
 
 <br>
 
@@ -77,12 +84,12 @@ Sou desenvolvedor Full Stack com foco em construir aplicações web robustas do 
 
 <div align="center">
 
-![GitHub Streak](https://streak-stats.demolab.com?user=JamesonHenrique&theme=radical&border_radius=10&date_format=j%20M%5B%20Y%5D&mode=weekly&ring=9D5CFF&fire=9D5CFF&currStreakNum=FFFFFF&sideNums=9D5CFF&currStreakLabel=9D5CFF&sideLabels=9D5CFF)
+<img src="https://github-readme-stats.vercel.app/api?username=JamesonHenrique&show_icons=true&theme=radical&border_color=9D5CFF&include_all_commits=true" alt="Estatísticas do GitHub de Jameson Henrique" width="48%" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=JamesonHenrique&layout=compact&theme=radical&border_color=9D5CFF" alt="Linguagens mais usadas por Jameson Henrique" width="48%" />
 
-![Jameson's GitHub Stats](https://github-readme-stats.vercel.app/api?username=JamesonHenrique&show_icons=true&theme=radical&border_color=9D5CFF&include_all_commits=true)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=JamesonHenrique&layout=compact&theme=radical&border_color=9D5CFF)
+<img src="https://streak-stats.demolab.com?user=JamesonHenrique&theme=radical&border_radius=10&date_format=j%20M%5B%20Y%5D&mode=weekly&ring=9D5CFF&fire=9D5CFF&currStreakNum=FFFFFF&sideNums=9D5CFF&currStreakLabel=9D5CFF&sideLabels=9D5CFF" alt="Streak de contribuições de Jameson Henrique" width="70%" />
 
-![GitHub Trophies](https://github-profile-trophy.vercel.app/?username=JamesonHenrique&theme=radical&no-frame=true&row=1&column=6)
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=JamesonHenrique&theme=redical&hide_border=true" alt="Gráfico de atividade de contribuições" width="90%" />
 
 </div>
 
@@ -90,17 +97,15 @@ Sou desenvolvedor Full Stack com foco em construir aplicações web robustas do 
 
 ## 🤝 Vamos nos conectar
 
-Se você curte backend, arquitetura de software ou só quer trocar uma ideia sobre algum projeto, meus contatos estão abertos:
-
 <div align="center">
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jamesonhenrique/)
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:seuemail@gmail.com)
 
-</div>
+Sempre aberto a trocar ideia sobre projetos, oportunidades ou só bater um papo sobre código. Manda mensagem! 🚀
 
 <br>
 
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=JamesonHenrique&color=9D5CFF&style=flat-square" alt="Contador de visitas do perfil de Jameson Henrique"/>
-</p>
+<img src="https://komarev.com/ghpvc/?username=JamesonHenrique&color=9D5CFF&style=flat-square" alt="Visualizações do perfil de Jameson Henrique" />
+
+</div>
