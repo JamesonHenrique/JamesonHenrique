@@ -2,7 +2,7 @@
 
 # Olá, eu sou o Jameson 👋
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=500&color=9929EA&width=490&lines=Full+Stack+Developer;Angular+%2B+Spring+Boot;Sempre+aprendendo+algo+novo)](https://git.io/typing-svg)
+![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=500&color=9929EA&width=490&lines=Full+Stack+Developer;Angular+%2B+Spring+Boot;Sempre+aprendendo+algo+novo)
 
 </div>
 
@@ -15,7 +15,7 @@ Sou desenvolvedor Full Stack com foco em construir aplicações web robustas do 
 - 🔭 Atualmente trabalhando com **Spring Boot** e **Angular** em projetos pessoais e profissionais
 - 🌱 Retomando o ritmo de código depois de uma pausa — focado em consistência e em fechar projetos até o fim
 - 🧠 Estudando mais a fundo **arquitetura de APIs** e boas práticas com **AWS**
-- 💬 Gosto de conversar sobre backend, arquitetura de software e boas práticas de deploy
+- 💬 Gosto de trocar ideia sobre backend, arquitetura de software e boas práticas de deploy
 - 📫 Me encontre no **[LinkedIn](https://www.linkedin.com/in/jamesonhenrique/)**
 
 <br>
@@ -63,15 +63,13 @@ Sou desenvolvedor Full Stack com foco em construir aplicações web robustas do 
 
 ## 🎨 Projetos em destaque
 
-| Projeto | Descrição |
-|---|---|
-| 🔹 **[Newgram](https://github.com/JamesonHenrique/Newgram)** | Clone de rede social inspirado no Instagram, com foco em feed e interações de usuário |
-| 🔹 **[Algamoney](https://github.com/JamesonHenrique/Algamoney)** | Sistema de controle financeiro pessoal com API REST em Java/Spring |
-| 🔹 **[WaveChat](https://github.com/JamesonHenrique/WaveChat)** | Aplicação de chat em tempo real com comunicação via WebSocket |
+| Projeto | 
+|---|
+| 🔹 **[Newgram](https://github.com/JamesonHenrique/Newgram)** 
+| 🔹 **[Algamoney](https://github.com/JamesonHenrique/Algamoney)**
+| 🔹 **[WaveChat](https://github.com/JamesonHenrique/WaveChat)** 
 
 📌 **[Ver todos os repositórios →](https://github.com/JamesonHenrique?tab=repositories)**
-
-> *Ajuste as descrições acima para refletir com precisão o que cada projeto realmente faz — coloquei um resumo plausível com base no nome, mas vale confirmar os detalhes reais (tech stack usada, status do projeto, etc).*
 
 <br>
 
@@ -79,12 +77,12 @@ Sou desenvolvedor Full Stack com foco em construir aplicações web robustas do 
 
 <div align="center">
 
-[![GitHub Streak](https://streak-stats.demolab.com?user=JamesonHenrique&theme=radical&border_radius=10&date_format=j%20M%5B%20Y%5D&mode=weekly&ring=9D5CFF&fire=9D5CFF&currStreakNum=FFFFFF&sideNums=9D5CFF&currStreakLabel=9D5CFF&sideLabels=9D5CFF)](https://git.io/streak-stats)
+![GitHub Streak](https://streak-stats.demolab.com?user=JamesonHenrique&theme=radical&border_radius=10&date_format=j%20M%5B%20Y%5D&mode=weekly&ring=9D5CFF&fire=9D5CFF&currStreakNum=FFFFFF&sideNums=9D5CFF&currStreakLabel=9D5CFF&sideLabels=9D5CFF)
 
-[![Jameson's GitHub Stats](https://github-readme-stats.vercel.app/api?username=JamesonHenrique&show_icons=true&theme=radical&border_color=9D5CFF&include_all_commits=true)](https://github.com/JamesonHenrique)
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=JamesonHenrique&layout=compact&theme=radical&border_color=9D5CFF)](https://github.com/JamesonHenrique)
+![Jameson's GitHub Stats](https://github-readme-stats.vercel.app/api?username=JamesonHenrique&show_icons=true&theme=radical&border_color=9D5CFF&include_all_commits=true)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=JamesonHenrique&layout=compact&theme=radical&border_color=9D5CFF)
 
-[![GitHub Trophies](https://github-profile-trophy.vercel.app/?username=JamesonHenrique&theme=radical&no-frame=true&row=1&column=6)](https://github.com/ryo-ma/github-profile-trophy)
+![GitHub Trophies](https://github-profile-trophy.vercel.app/?username=JamesonHenrique&theme=radical&no-frame=true&row=1&column=6)
 
 </div>
 
