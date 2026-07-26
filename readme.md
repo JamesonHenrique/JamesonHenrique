@@ -75,8 +75,6 @@ Sou desenvolvedor Full Stack, gosto de transitar entre frontend e backend e de e
 
 📌 Veja **[todos os repositórios](https://github.com/JamesonHenrique?tab=repositories)**
 
-> Ajuste as descrições acima se algum detalhe não bater exatamente com o que o projeto faz hoje.
-
 <br>
 
 ## 📈 Estatísticas no GitHub
