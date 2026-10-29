@@ -113,10 +113,15 @@ test('SVG escapes text/attributes, wraps long tokens and has no executable/exter
   assert.deepEqual(wrap('abcdefghij', 4), ['abcd', 'efgh', 'ij']);
   const p = structuredClone(profile); p.name = '<script>&"\'';
   const assets = renderAssets(p, snapshot());
-  assert.equal(Object.keys(assets).length, 3);
+  assert.equal(Object.keys(assets).length, 6);
   for (const svg of Object.values(assets)) {
     assert(svg.includes('<title id="title">')); assert(svg.includes('<desc id="desc">')); assert(svg.includes('viewBox='));
-    assert(!/<script|foreignObject|\bonload=|(?:href|src)=/.test(svg));
+    assert(!/<script|foreignObject|\bonload=|(?:href|src)="(?!#)/.test(svg));
+    const idList = [...svg.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
+    const ids = new Set(idList);
+    assert.equal(ids.size, idList.length, 'Desktop and mobile views must not duplicate IDs');
+    assert(/^<svg[^>]+viewBox=/.test(svg));
+    for (const match of svg.matchAll(/href="#([^"]+)"/g)) assert(ids.has(match[1]), 'Vector glyph reference must be local and defined');
   }
   assert(assets['assets/profile-header.svg'].includes('&lt;script&gt;&amp;&quot;&apos;'));
 });
@@ -154,7 +159,7 @@ async function sandbox(t) {
 test('offline generation twice is a no-op; unrelated files are preserved', async t => {
   const directory = await sandbox(t);
   await writeFile(path.join(directory, 'unrelated.txt'), 'keep');
-  assert.equal((await generate({ directory })).length, 4);
+  assert.equal((await generate({ directory })).length, 7);
   assert.deepEqual(await generate({ directory }), []);
   assert.deepEqual(await generate({ directory, check: true }), []);
   assert.equal(await readFile(path.join(directory, 'unrelated.txt'), 'utf8'), 'keep');
@@ -185,7 +190,9 @@ test('README has exactly the three SVGs in reference order, with clickable heade
   const s = snapshot(), assets = renderAssets(profile, s), readme = renderReadme(profile, s, assets);
   assert(readme.startsWith('<div align="center">'));
   assert.equal((readme.match(/<img /g) ?? []).length, 3);
-  assert(!/<picture|<details|###/.test(readme));
+  assert(!/<details|###/.test(readme));
+  assert.equal((readme.match(/<picture>/g) ?? []).length, 3);
+  assert.equal((readme.match(/assets\/mobile\//g) ?? []).length, 3);
   assert(readme.indexOf('profile-header.svg') < readme.indexOf('contributions.svg'));
   assert(readme.indexOf('contributions.svg') < readme.indexOf('tech-ecosystem.svg'));
   assert(readme.includes(profile.links[0].url));
@@ -212,4 +219,13 @@ test('header carousel has local animation, fade mask and reduced-motion fallback
   assert(svg.includes('prefers-reduced-motion:reduce'));
   assert(svg.includes('mask="url(#fade-mask)"'));
   assert(svg.includes('dur="15s"'));
+});
+test('additional configured stack technologies remain visible and expand their panel', () => {
+  const p = structuredClone(profile);
+  p.stack.groups[0].items.push('Integrações REST');
+  const assets = renderAssets(p, snapshot());
+  assert(assets['assets/tech-ecosystem.svg'].includes('data-text="Integrações REST"'));
+  assert(assets['assets/mobile/tech-ecosystem.svg'].includes('data-text="Integrações'));
+  const height = Number(assets['assets/tech-ecosystem.svg'].match(/viewBox="0 0 960 (\d+)"/)[1]);
+  assert(height > 236);
 });

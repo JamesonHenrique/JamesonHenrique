@@ -37,6 +37,8 @@ export function validateConfig(p) {
   text(p.activity.title, 'activity title', 80); text(p.activity.note, 'activity note', 160);
   assert(Number.isInteger(p.presentation.mobileBreakpoint) && p.presentation.mobileBreakpoint >= 480 && p.presentation.mobileBreakpoint <= 768, 'Invalid breakpoint');
   for (const key of ['terminal', 'projectsLabel', 'stackSubtitle', 'contactLabel', 'stackKicker']) text(p.presentation[key], key, key === 'stackSubtitle' ? 50 : 40);
+  for (const key of ['display', 'body', 'strong', 'mono']) assert(['display', 'body', 'strong', 'mono'].includes(p.typography?.[key]), 'Unknown typography face');
+  for (const key of ['card', 'secondary', 'grid']) assert(/^#[\da-f]{6}$/i.test(p.themes.dark[key]), `Invalid dark.${key}`);
   for (const mode of ['light', 'dark']) {
     const t = p.themes[mode];
     assert(t, `Missing ${mode} theme`);

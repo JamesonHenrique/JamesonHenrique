@@ -2,7 +2,9 @@
 
 O README é composto exclusivamente por três SVGs: `assets/profile-header.svg` (960×308), `assets/contributions.svg` (960×327) e `assets/tech-ecosystem.svg` (960×236). A composição segue o perfil de [nandomoreirame](https://github.com/nandomoreirame/nandomoreirame), com dados próprios de Jameson. O código foi implementado localmente; a referência consultada não declara licença de reutilização.
 
-A revisão atual atende ao pedido de reproduzir a apresentação da referência: tema preto/âmbar fixo, grade fina, animação do cabeçalho, quatro cartões de stack e somente três imagens no README. As variantes de tema e celular das primeiras propostas foram removidas. As três imagens são escaladas pelo GitHub como na referência; em telas pequenas o texto fica menor. O carrossel tem alternativa estática para `prefers-reduced-motion`.
+A estrutura de três painéis aprovada foi preservada. A identidade atual usa preto com matiz violeta, roxo/lilás, grid discreto, monograma derivado do nome e bordas suaves. Space Grotesk, Manrope e IBM Plex Mono são incorporadas como contornos vetoriais, com licenças OFL preservadas: não dependem de fontes instaladas ou carregamento externo. Consulte [a manutenção das fontes](../fonts/README.md).
+
+O README continua mostrando três painéis. O desktop mantém os três SVGs principais; `assets/mobile/` contém três versões específicas para telas pequenas. O `<picture>` escolhe a versão conforme o breakpoint de `profile.json`. No celular, apresentação empilhada, métricas maiores, barras mensais e stack em 2×2. A adaptação exige arquivos extras, mas evita reduzir as quatro colunas até ficarem ilegíveis. O carrossel tem alternativa estática para movimento reduzido.
 
 ## Editar, testar e gerar
 
@@ -16,7 +18,7 @@ node scripts/update.mjs
 node scripts/preview.mjs
 ```
 
-Edite `profile.json`: nome, apresentação, formação, contato, terminal, stack e cores. As quatro categorias estão em `stack.groups`: IA e agentes, frontend, backend e dados, cloud e sistemas. Use até três linhas curtas por cartão para manter a composição de 236px. Cores visuais vêm de `themes.dark`; os dados pessoais completos estão nos textos alternativos e nas descrições internas das imagens.
+Edite `profile.json`: nome, apresentação, formação, contato, terminal, stack e cores. As quatro categorias estão em `stack.groups`: IA e agentes, frontend, backend e dados, cloud e sistemas. Três linhas por cartão mantêm a composição desktop de 236px. Se houver mais linhas, a altura cresce automaticamente em vez de esconder tecnologias. Cores visuais vêm de `themes.dark`, incluindo cores secundárias, superfície dos cartões e grid; `typography` seleciona as faces do atlas. Os dados pessoais completos estão nos textos alternativos e nas descrições internas das imagens.
 
 `generate` funciona offline a partir de `data/contributions.json` e não muda a data da consulta. `--check` apenas verifica se as saídas estão atualizadas. `update` consulta a API antes de gerar e recebe o token exclusivamente por `GITHUB_TOKEN`. Não coloque credenciais no JSON, nos testes ou em arquivos versionados. `preview` serve o próprio HTML do README em `http://127.0.0.1:4173/`; `PROFILE_PREVIEW_PORT` muda a porta.
 
@@ -47,3 +49,17 @@ O workflow usa Node.js 24, `node --test`, actions oficiais fixadas por SHA compl
 Se a branch passar a exigir PR, mantenha a proteção e adapte o escritor para uma branch de bot com PR. Não enfraqueça as regras da `main`.
 
 Fontes: [campos GraphQL](https://docs.github.com/en/graphql/reference/users), [autenticação GraphQL](https://docs.github.com/en/graphql/guides/forming-calls-with-graphql), [GITHUB_TOKEN](https://docs.github.com/en/actions/concepts/security/github_token), [agenda do Actions](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).
+
+## Composições de tela e tipografia
+
+As condições de largura pertencem ao `<picture>` do README, com SVGs distintos para desktop e celular. Não há dependência de media queries internas do SVG responderem à largura da página, JavaScript, fragmentos de viewport ou `foreignObject`. `prefers-reduced-motion` é a media query interna de acessibilidade.
+
+Foi testada uma alternativa com duas vistas no mesmo SVG para manter três arquivos, mas o WebKit não respeitou a proporção móvel com URLs versionadas. A solução com `assets/mobile/` foi escolhida por funcionar de forma consistente nos três motores testados.
+
+A composição móvel contém meses parciais nas bordas; suas barras somam exatamente as mesmas contagens diárias do calendário desktop. O período e a data de consulta são os mesmos nas duas composições.
+
+O gerador mede avanços reais dos glifos para cortar nomes longos de repositórios e quebrar linhas no celular. Referências `<use href="#font-…">` são internas e todos os glifos necessários são incluídos em `<defs>`. O metadata de cada SVG contém as licenças das famílias. Arquivos em `fonts/` acionam os checks de geração no Actions.
+
+Foram executadas capturas em Chromium em desktop, 390px e 320px e validação da vista móvel também em Firefox e WebKit, sem pedidos de fontes externos; o contraste mínimo calculado das cores de texto nas superfícies do tema foi 6,77:1. O uso de contornos aumenta os SVGs em relação à versão com fontes de sistema, em troca de tipografia consistente. O fallback para navegadores sem suporte a `<picture>` é a vista desktop.
+
+A seleção de imagens usa o `<picture>` suportado pelo Markdown do GitHub; o fallback é sempre o SVG desktop.

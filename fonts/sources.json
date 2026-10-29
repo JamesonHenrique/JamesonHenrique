@@ -1,0 +1,28 @@
+{
+  "source": "https://github.com/google/fonts",
+  "revision": "6157dfaa640ca5738b4d1a7070fe389c3036d7fc",
+  "tool": "fonttools==4.60.1",
+  "fonts": [
+    {
+      "family": "spacegrotesk",
+      "file": "SpaceGrotesk[wght].ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/6157dfaa640ca5738b4d1a7070fe389c3036d7fc/ofl/spacegrotesk/SpaceGrotesk%5Bwght%5D.ttf",
+      "sha256": "acad6de1fc93436f5c0f1f4137751ef04f1aea3063e7036535970ffcfbd79f72",
+      "license": "spacegrotesk-OFL.txt"
+    },
+    {
+      "family": "manrope",
+      "file": "Manrope[wght].ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/6157dfaa640ca5738b4d1a7070fe389c3036d7fc/ofl/manrope/Manrope%5Bwght%5D.ttf",
+      "sha256": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6",
+      "license": "manrope-OFL.txt"
+    },
+    {
+      "family": "ibmplexmono",
+      "file": "IBMPlexMono-Medium.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/6157dfaa640ca5738b4d1a7070fe389c3036d7fc/ofl/ibmplexmono/IBMPlexMono-Medium.ttf",
+      "sha256": "a9b4c49bb299e05b5f6c481e7fb5e78943d2793249a0c8874ab574a2d1ea6755",
+      "license": "ibmplexmono-OFL.txt"
+    }
+  ]
+}
