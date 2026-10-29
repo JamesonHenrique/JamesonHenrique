@@ -19,42 +19,36 @@ function picture(module, alt, assets, breakpoint) {
 }
 export function renderReadme(p, s, assets) {
   const m = metrics(s);
-  return `# ${markdown(p.name)}
+  return `${picture('intro', `${p.name}. ${p.role}. ${p.headline} ${p.availability}.`, assets, p.presentation.mobileBreakpoint)}
 
-${picture('intro', `${p.role}. ${p.headline} ${p.availability}.`, assets, p.presentation.mobileBreakpoint)}
+${picture('activity', `Atividade real de ${formatDate(s.from)} a ${formatDate(s.to)}: ${m.total} contribuições e ${m.active} dias ativos.`, assets, p.presentation.mobileBreakpoint)}
 
-${markdown(p.summary)}
-
-${markdown(p.location)} · ${markdown(p.education)}. **${markdown(p.availability)}.**
+${picture('stack', 'Ecossistema: IA e automação; frontend; backend e dados; cloud e sistemas. Tecnologias em texto nos detalhes.', assets, p.presentation.mobileBreakpoint)}
 
 ${p.links.map(l => `[${markdown(l.label)}](${l.url})`).join(' · ')}
 
-${picture('stack', 'Stack organizada em IA e automação, frontend, backend e dados, cloud e sistemas. Lista em texto abaixo.', assets, p.presentation.mobileBreakpoint)}
+### Projetos
+
+${p.projects.map(v => `- **[${markdown(v.name)}](${v.url})** — ${markdown(v.description)} ${v.technologies.map(markdown).join(' · ')}.${v.demo ? ` [${markdown(v.demoLabel)}](${v.demo}).` : ''}`).join('\n')}
 
 <details>
-<summary>Stack em texto</summary>
+<summary>Sobre mim, stack e dados de atividade em texto</summary>
+
+**${markdown(p.name)} · ${markdown(p.role)}.** ${markdown(p.summary)}
+
+${markdown(p.location)} · ${markdown(p.education)}. **${markdown(p.availability)}.**
+
+Direção principal: ${p.focus.map(markdown).join(' · ')}.
 
 ${p.stack.groups.map(g => `- **${markdown(g.title)}:** ${g.items.map(markdown).join('; ')}.`).join('\n')}
 
 ${markdown(p.stack.note)}
 
-</details>
-
-## Projetos selecionados
-
-${p.projects.map(v => `### ${markdown(v.name)}
-
-${markdown(v.description)}
-
-${v.technologies.map(markdown).join(' · ')}
-
-[Código](${v.url})${v.demo ? ` · [${markdown(v.demoLabel)}](${v.demo})` : ''}`).join('\n\n')}
-
-${picture('activity', `Calendário real de ${formatDate(s.from)} a ${formatDate(s.to)}. Métricas em texto abaixo.`, assets, p.presentation.mobileBreakpoint)}
-
 **${m.total.toLocaleString('pt-BR')} contribuições** em **${m.active} dias ativos**, de ${formatDate(s.from)} a ${formatDate(s.to)} (${s.days.length} dias completos). ${m.peak ? `Pico de ${m.peak.count} em ${formatDate(m.peak.date)}; em caso de empate, o primeiro dia do período.` : 'Nenhuma contribuição no período; sem dia de pico.'} Última consulta bem-sucedida: **${formatDate(s.queriedOn)} (UTC)**.
 
 ${markdown(p.activity.note)} Os números dependem da visibilidade e da autenticação da API.
+
+</details>
 `;
 }
 export function updateReadme(existing, generated) {

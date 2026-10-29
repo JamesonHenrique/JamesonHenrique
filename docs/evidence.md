@@ -28,8 +28,18 @@ Não há `LICENSE` na árvore consultada e a API não reconhece licença. Ausên
 
 A identidade usa uma sequência editorial de três módulos, divisórias, tipografia sem recursos externos e roxo com contraste em fundos próprios. Não há animação, badges ou indicadores de proficiência. O celular usa outra composição e outra visualização de atividade; o texto essencial e os links continuam no Markdown.
 
-## Validação da entrega
+## Validação da primeira entrega
 
 [CI de push](https://github.com/JamesonHenrique/JamesonHenrique/actions/runs/40952177360) e [CI do PR](https://github.com/JamesonHenrique/JamesonHenrique/actions/runs/40952199953) concluíram com sucesso. Foram **21 testes offline**, checagem das saídas e geração idempotente. A consulta real no Actions com o token padrão e `contents: read` retornou os mesmos dados agregados do snapshot inicial (zero saídas alteradas), sem secret adicional. O job que escreve na branch padrão foi corretamente ignorado na branch de revisão; o commit automático diário só poderá executar após o merge.
 
 Localmente, `actionlint` **1.7.12** passou, os 12 SVGs foram analisados como XML, as capturas em Chromium confirmaram seleção das variantes e ausência de rolagem horizontal em 1100/390/320px, e os limites de texto dos SVGs foram verificados. A inspeção visual dos temas claro e escuro não encontrou cortes ou sobreposições; um conflito inicial entre rótulos dos meses foi corrigido antes da entrega. O renderizador Markdown oficial preservou os três blocos responsivos.
+
+## Revisão de composição após comparação visual
+
+A primeira proposta foi rejeitada por se afastar da referência. A nova revisão foi guiada pela **renderização efetiva** dos SVGs de `nandomoreirame/nandomoreirame`, na mesma revisão já identificada acima. Os elementos relevantes eram os três painéis consecutivos, fundo quase preto com grade fina, contorno discreto, nome dominante, terminal, projetos à direita, calendário no segundo painel e quatro cartões coloridos no terceiro.
+
+A implementação própria passa a usar essa organização com o conteúdo de Jameson, roxo principal e cartões de projetos estáticos. Não replica animações, código-fonte, dados ou textos do autor. As dimensões desktop dos módulos são **960 × 319**, **960 × 341** e **960 × 254**; a referência usa **960 × 308**, **960 × 327** e **960 × 236**. As diferenças acomodam a formação, o período exato e os dados reais sem esconder informações.
+
+O README agora começa diretamente pelos três módulos visuais. Contatos e projetos clicáveis vêm depois; o texto acessível completo fica em uma seção expansível. A versão móvel mantém as mesmas superfícies e cores, com projetos abaixo da apresentação, métricas em duas colunas, barras mensais e stack em uma grade 2 × 2.
+
+A revisão passou nos **22 testes**, incluindo a ordem e continuidade dos módulos, e na geração repetida sem alterações. Foram feitas novas capturas em claro/escuro a 1100/390/320px e verificados os limites de todos os textos dos 12 SVGs. Não houve alteração no snapshot ou no workflow de atualização.

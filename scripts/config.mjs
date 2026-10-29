@@ -36,10 +36,12 @@ export function validateConfig(p) {
   assert.equal(p.activity.days, 365, 'Only the 365 complete UTC date window is supported');
   text(p.activity.title, 'activity title', 80); text(p.activity.note, 'activity note', 160);
   assert(Number.isInteger(p.presentation.mobileBreakpoint) && p.presentation.mobileBreakpoint >= 480 && p.presentation.mobileBreakpoint <= 768, 'Invalid breakpoint');
+  for (const key of ['terminal', 'projectsLabel', 'stackSubtitle']) text(p.presentation[key], key, key === 'stackSubtitle' ? 43 : 40);
   for (const mode of ['light', 'dark']) {
     const t = p.themes[mode];
     assert(t, `Missing ${mode} theme`);
-    for (const key of ['background', 'surface', 'text', 'muted', 'accent', 'border']) assert(/^#[\da-f]{6}$/i.test(t[key]), `Invalid ${mode}.${key}`);
+    for (const key of ['background', 'surface', 'text', 'muted', 'accent', 'border', 'signal']) assert(/^#[\da-f]{6}$/i.test(t[key]), `Invalid ${mode}.${key}`);
+    assert(t.groupAccents.length === 4 && t.groupAccents.every(c => /^#[\da-f]{6}$/i.test(c)), 'Expected four group colors');
     assert(t.heat.length === 5 && t.heat.every(c => /^#[\da-f]{6}$/i.test(c)), 'Expected five heat colors');
   }
   return p;
