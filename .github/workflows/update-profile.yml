@@ -1,0 +1,108 @@
+name: Profile
+
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'profile.json'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'package.json'
+      - '.node-version'
+      - '.github/workflows/update-profile.yml'
+  pull_request:
+    paths:
+      - 'README.md'
+      - 'profile.json'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'assets/**'
+      - 'data/**'
+      - 'package.json'
+      - '.node-version'
+      - '.github/workflows/update-profile.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: profile-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Test with isolated fixtures
+        run: node --test
+      - name: Check generated files and idempotence
+        run: |
+          node scripts/generate.mjs --check
+          node scripts/generate.mjs
+          git diff --exit-code -- README.md assets data/contributions.json
+      - name: Verify live API with the standard Actions token
+        if: github.event_name == 'push'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/update.mjs
+
+  update:
+    needs: check
+    if: github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    concurrency:
+      group: profile-write-${{ github.ref }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Test checked-out revision
+        run: node --test
+      - name: Query and generate
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/update.mjs
+      - name: Verify deterministic generation
+        run: node scripts/generate.mjs --check
+      - name: Commit only expected outputs without overwriting concurrent work
+        env:
+          PROFILE_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          git add -- README.md data/contributions.json \
+            assets/intro-light-desktop.svg assets/intro-dark-desktop.svg \
+            assets/intro-light-mobile.svg assets/intro-dark-mobile.svg \
+            assets/stack-light-desktop.svg assets/stack-dark-desktop.svg \
+            assets/stack-light-mobile.svg assets/stack-dark-mobile.svg \
+            assets/activity-light-desktop.svg assets/activity-dark-desktop.svg \
+            assets/activity-light-mobile.svg assets/activity-dark-mobile.svg
+          if git diff --cached --quiet; then
+            echo 'No generated changes'
+            exit 0
+          fi
+          git fetch origin "$PROFILE_BRANCH"
+          if [ "$(git rev-parse HEAD)" != "$(git rev-parse FETCH_HEAD)" ]; then
+            echo '::error::Branch advanced during generation; rerun the workflow.'
+            exit 1
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'chore(profile): atualiza atividade e módulos gerados'
+          git push origin "HEAD:$PROFILE_BRANCH"
