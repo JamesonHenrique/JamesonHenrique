@@ -181,3 +181,18 @@ test('invalid README prevents a successful API result from overwriting snapshot'
   await assert.rejects(update({ directory, token: 'test-placeholder', now: new Date('2024-03-02'), fetchImpl: async () => reply(fixture) }));
   assert.equal(await readFile(path.join(directory, 'data/contributions.json'), 'utf8'), before);
 });
+test('compact README keeps introduction, activity and ecosystem together, followed by clickable projects and accessible text', () => {
+  const s = snapshot(), assets = renderAssets(profile, s), readme = renderReadme(profile, s, assets);
+  assert(readme.startsWith('<picture>'));
+  assert.equal((readme.match(/<picture>/g) ?? []).length, 3);
+  const intro = readme.indexOf('intro-light-desktop.svg');
+  const activity = readme.indexOf('activity-light-desktop.svg');
+  const stack = readme.indexOf('stack-light-desktop.svg');
+  assert(intro < activity && activity < stack);
+  assert(readme.indexOf('### Projetos') > stack);
+  assert(readme.includes('<details>') && readme.includes(profile.summary));
+  for (const project of profile.projects) {
+    assert(readme.includes(`](${project.url})`));
+    assert(assets['assets/intro-dark-desktop.svg'].includes(project.name));
+  }
+});

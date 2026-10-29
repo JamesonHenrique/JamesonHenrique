@@ -3,34 +3,160 @@
   "name": "Jameson Henrique",
   "location": "Natal/RN, Brasil",
   "role": "Desenvolvimento Full Stack",
-  "headline": "Java, TypeScript e automação para construir soluções úteis.",
+  "headline": "APIs, interfaces e integrações.",
   "summary": "Desenvolvo APIs, interfaces e integrações. Minha base é Java com Spring Boot e TypeScript com Angular, com experiência em automação de processos.",
   "education": "Bacharelado em TI · UFRN · em andamento",
   "availability": "Aberto a oportunidades",
-  "focus": ["Java / Spring Boot", "TypeScript / Angular", "APIs / Integrações"],
+  "focus": [
+    "Java / Spring Boot",
+    "TypeScript / Angular",
+    "APIs / Integrações"
+  ],
   "links": [
-    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/jamesonhenrique/" },
-    { "label": "Todos os repositórios", "url": "https://github.com/JamesonHenrique?tab=repositories" }
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/jamesonhenrique/"
+    },
+    {
+      "label": "Todos os repositórios",
+      "url": "https://github.com/JamesonHenrique?tab=repositories"
+    }
   ],
   "stack": {
-    "title": "Da interface à integração.",
+    "title": "Ecossistema",
     "note": "IA como ferramenta de desenvolvimento; automação como parte da solução.",
     "groups": [
-      { "title": "IA e automação", "note": "Integrar processos", "items": ["Make · n8n", "APIs · Webhooks", "Codex · MCP"] },
-      { "title": "Frontend", "note": "Construir interfaces", "items": ["Angular · TypeScript", "HTML · CSS", "RxJS"] },
-      { "title": "Backend e dados", "note": "Modelar e conectar", "items": ["Java · Spring Boot", "REST · Spring Security", "PostgreSQL · Flyway"] },
-      { "title": "Cloud e sistemas", "note": "Executar e entregar", "items": ["Docker · Linux", "AWS S3", "GitHub Actions"] }
+      {
+        "title": "IA e automação",
+        "note": "Integrar processos",
+        "items": [
+          "Make · n8n",
+          "APIs · Webhooks",
+          "Codex · MCP"
+        ]
+      },
+      {
+        "title": "Frontend",
+        "note": "Construir interfaces",
+        "items": [
+          "Angular · TypeScript",
+          "HTML · CSS",
+          "RxJS"
+        ]
+      },
+      {
+        "title": "Backend e dados",
+        "note": "Modelar e conectar",
+        "items": [
+          "Java · Spring Boot",
+          "REST · Spring Security",
+          "PostgreSQL · Flyway"
+        ]
+      },
+      {
+        "title": "Cloud e sistemas",
+        "note": "Executar e entregar",
+        "items": [
+          "Docker · Linux",
+          "AWS S3",
+          "GitHub Actions"
+        ]
+      }
     ]
   },
   "projects": [
-    { "name": "Newgram", "description": "Rede social com autenticação JWT, feed e upload de mídia em S3.", "technologies": ["Java", "Spring Boot", "Angular", "PostgreSQL"], "url": "https://github.com/JamesonHenrique/Newgram", "demo": "https://newgram-nine.vercel.app/", "demoLabel": "Interface online" },
-    { "name": "Help My Desk", "description": "Suporte técnico para Windows e Linux: diagnóstico, explicação e correções com aprovação. Em desenvolvimento.", "technologies": ["Rust", "Tauri", "Angular"], "url": "https://github.com/JamesonHenrique/helpmydesk" },
-    { "name": "OportunizaVaga", "description": "Automação de candidaturas com estado persistente e monitor de execução. A demo usa dados fictícios.", "technologies": ["Python", "Shell", "Next.js", "APIs"], "url": "https://github.com/JamesonHenrique/OportunizaVaga", "demo": "https://oportunizavaga-demo.vercel.app/", "demoLabel": "Demo simulada" }
+    {
+      "name": "Newgram",
+      "description": "Rede social com autenticação JWT, feed e upload de mídia em S3.",
+      "technologies": [
+        "Java",
+        "Spring Boot",
+        "Angular",
+        "PostgreSQL"
+      ],
+      "url": "https://github.com/JamesonHenrique/Newgram",
+      "demo": "https://newgram-nine.vercel.app/",
+      "demoLabel": "Interface online"
+    },
+    {
+      "name": "Help My Desk",
+      "description": "Suporte técnico para Windows e Linux: diagnóstico, explicação e correções com aprovação. Em desenvolvimento.",
+      "technologies": [
+        "Rust",
+        "Tauri",
+        "Angular"
+      ],
+      "url": "https://github.com/JamesonHenrique/helpmydesk"
+    },
+    {
+      "name": "OportunizaVaga",
+      "description": "Automação de candidaturas com estado persistente e monitor de execução. A demo usa dados fictícios.",
+      "technologies": [
+        "Python",
+        "Shell",
+        "Next.js",
+        "APIs"
+      ],
+      "url": "https://github.com/JamesonHenrique/OportunizaVaga",
+      "demo": "https://oportunizavaga-demo.vercel.app/",
+      "demoLabel": "Demo simulada"
+    }
   ],
-  "activity": { "days": 365, "title": "Atividade, em contexto.", "note": "Contribuições registradas no GitHub. Não medem produtividade ou experiência." },
-  "presentation": { "mobileBreakpoint": 600 },
+  "activity": {
+    "days": 365,
+    "title": "Atividade",
+    "note": "Contribuições registradas no GitHub. Não medem produtividade ou experiência."
+  },
+  "presentation": {
+    "mobileBreakpoint": 600,
+    "terminal": "Java + Angular + automação",
+    "projectsLabel": "PROJETOS",
+    "stackSubtitle": "As tecnologias com que construo software."
+  },
   "themes": {
-    "light": { "background": "#F8F6FC", "surface": "#EEE9F6", "text": "#211A32", "muted": "#5F556F", "accent": "#6836B5", "border": "#D6CBE7", "heat": ["#E6DFEF", "#C9B3EA", "#A581D5", "#8051BF", "#572893"] },
-    "dark": { "background": "#16131E", "surface": "#231D30", "text": "#F4EFFB", "muted": "#BCB1CD", "accent": "#C3A0FF", "border": "#443651", "heat": ["#2D253B", "#523872", "#7850A5", "#A071D6", "#CBA4FF"] }
+    "light": {
+      "background": "#FAFAFC",
+      "surface": "#FFFFFF",
+      "text": "#202027",
+      "muted": "#62616E",
+      "accent": "#7541BE",
+      "border": "#DEDEE7",
+      "signal": "#147D60",
+      "groupAccents": [
+        "#7541BE",
+        "#176AAB",
+        "#147D60",
+        "#93601E"
+      ],
+      "heat": [
+        "#E7E5ED",
+        "#D6C1F0",
+        "#B08BD8",
+        "#8C5DC1",
+        "#653499"
+      ]
+    },
+    "dark": {
+      "background": "#0C0C0F",
+      "surface": "#141417",
+      "text": "#F4F4F6",
+      "muted": "#A2A1AD",
+      "accent": "#B388F5",
+      "border": "#29282F",
+      "signal": "#49CBA2",
+      "groupAccents": [
+        "#B388F5",
+        "#7EBEF5",
+        "#49CBA2",
+        "#EFC398"
+      ],
+      "heat": [
+        "#25232C",
+        "#443052",
+        "#704798",
+        "#A574D5",
+        "#D1ADF4"
+      ]
+    }
   }
 }
