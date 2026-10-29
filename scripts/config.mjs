@@ -13,7 +13,7 @@ export function validateConfig(p) {
   assert(p && typeof p === 'object', 'Expected profile object');
   assert(/^[a-z\d](?:[a-z\d-]{0,37}[a-z\d])?$/i.test(p.login), 'Invalid GitHub login');
   for (const key of ['name', 'location', 'role', 'headline', 'summary', 'education', 'availability']) text(p[key], key, key === 'summary' ? 350 : 160);
-  text(p.role, 'role', 30); text(p.availability, 'availability', 32);
+  text(p.role, 'role', 58); text(p.availability, 'availability', 32);
   assert(Array.isArray(p.focus) && p.focus.length === 3, 'Expected three focus labels');
   p.focus.forEach(v => text(v, 'focus', 35));
   assert(Array.isArray(p.links) && p.links.length > 0 && p.links.length <= 5, 'Invalid links');
@@ -36,7 +36,7 @@ export function validateConfig(p) {
   assert.equal(p.activity.days, 365, 'Only the 365 complete UTC date window is supported');
   text(p.activity.title, 'activity title', 80); text(p.activity.note, 'activity note', 160);
   assert(Number.isInteger(p.presentation.mobileBreakpoint) && p.presentation.mobileBreakpoint >= 480 && p.presentation.mobileBreakpoint <= 768, 'Invalid breakpoint');
-  for (const key of ['terminal', 'projectsLabel', 'stackSubtitle']) text(p.presentation[key], key, key === 'stackSubtitle' ? 43 : 40);
+  for (const key of ['terminal', 'projectsLabel', 'stackSubtitle', 'contactLabel', 'stackKicker']) text(p.presentation[key], key, key === 'stackSubtitle' ? 50 : 40);
   for (const mode of ['light', 'dark']) {
     const t = p.themes[mode];
     assert(t, `Missing ${mode} theme`);
