@@ -110,10 +110,10 @@
   "presentation": {
     "mobileBreakpoint": 600,
     "terminal": "BTI na UFRN · em formação",
-    "projectsLabel": "ABERTOS",
+    "projectsLabel": "REPOSITÓRIOS",
     "stackSubtitle": "as tecnologias com que eu construo software",
     "contactLabel": "linkedin.com/in/jamesonhenrique",
-    "stackKicker": "FULL STACK · INTEGRAÇÕES"
+    "stackKicker": "JAVA · ANGULAR · AUTOMAÇÃO"
   },
   "themes": {
     "light": {
@@ -139,26 +139,35 @@
       ]
     },
     "dark": {
-      "background": "#0B0B0C",
-      "surface": "#121214",
-      "text": "#F4F4F5",
-      "muted": "#A1A1AA",
-      "accent": "#F5A623",
-      "border": "#222226",
-      "signal": "#34D399",
+      "background": "#0D0B12",
+      "surface": "#15111F",
+      "text": "#F3EFFA",
+      "muted": "#AEA3BD",
+      "accent": "#B58AFF",
+      "border": "#352B45",
+      "signal": "#7BD9BF",
       "groupAccents": [
-        "#F5A623",
-        "#79C0FF",
-        "#34D399",
-        "#FACF9E"
+        "#C5A2FF",
+        "#A9B5FF",
+        "#86D9C2",
+        "#D9B1DF"
       ],
       "heat": [
-        "#222226",
-        "#5C3D12",
-        "#A56B14",
-        "#F5A623",
-        "#FACF9E"
-      ]
+        "#241C31",
+        "#49305F",
+        "#74509E",
+        "#A577D4",
+        "#D9B6FF"
+      ],
+      "card": "#1C1529",
+      "secondary": "#DBBFFF",
+      "grid": "#30263F"
     }
+  },
+  "typography": {
+    "display": "display",
+    "body": "body",
+    "strong": "strong",
+    "mono": "mono"
   }
 }

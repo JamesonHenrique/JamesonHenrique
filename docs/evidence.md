@@ -53,3 +53,15 @@ Foram reexaminados o README real, os três SVGs e o gerador da mesma revisão `2
 O trecho citado pelo usuário com 9.739 contribuições corresponde ao autor em outra data. Não é dado de Jameson. A API de Jameson foi consultada novamente e o calendário e os repositórios publicados vêm dessa resposta. O snapshot agora inclui níveis de intensidade oficiais e apenas os cinco nomes públicos e datas usados pelo carrossel.
 
 A validação desta revisão inclui 24 testes offline, duas gerações idênticas, estrutura XML dos três SVGs, renderização no Chromium, cinco instantes do carrossel e a alternativa com movimento reduzido. A versão móvel agora escala os mesmos três SVGs, seguindo a referência, em vez de usar uma composição independente.
+
+## Identidade roxa sobre a estrutura aprovada
+
+Após aprovar a composição de três SVGs, Jameson pediu refinamento visual com roxo e fontes de maior personalidade. Essa revisão mantém ordem, dimensões desktop, carrossel e dados da estrutura aprovada. A paleta muda para preto-violeta, roxo/lilás, azul suave, menta e malva; as tecnologias centrais recebem peso maior. Monograma derivado do nome, contornos mais suaves, hierarquia e espaçamento foram ajustados sem novos módulos.
+
+Space Grotesk, Manrope e IBM Plex Mono foram obtidas de Google Fonts na revisão `6157dfaa640ca5738b4d1a7070fe389c3036d7fc`, com hashes e licenças em `fonts/`. Seus contornos são incorporados ao SVG; o gerador Node 24 continua sem dependências de runtime. Python/fonttools é ferramenta opcional de construção do atlas, não parte da Action diária. O SVG contém os avisos de licença.
+
+Para melhorar a leitura no celular, foram geradas composições específicas em `assets/mobile/`, mantendo três painéis no README e os três SVGs principais no desktop. Foi investigada a alternativa de embutir duas vistas no mesmo arquivo, mas a proporção da vista móvel com URL versionada não ficou confiável no WebKit. A alternativa foi descartada antes da publicação. As versões móveis independentes funcionaram em Chromium, Firefox e WebKit e evitaram repetir esse problema no perfil publicado.
+
+Foram calculados os contrastes de texto sobre fundo, superfície e cartões: mínimo 6,77:1. Foram geradas capturas desktop e móveis e verificados os limites dos textos vetoriais, sem requisições externas de fontes. O snapshot e a agenda diária não foram alterados por esta revisão visual.
+
+A validação local da revisão roxa terminou com **29 testes**, `actionlint` sem erros, duas gerações idempotentes, análise XML dos seis arquivos e preservação dos três painéis pelo renderizador Markdown do GitHub. As versões de celular carregaram com as mesmas proporções em Chromium, Firefox e WebKit. Nenhuma fonte externa foi solicitada durante a renderização.

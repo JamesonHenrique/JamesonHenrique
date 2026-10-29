@@ -8,6 +8,7 @@ on:
     paths:
       - 'profile.json'
       - 'scripts/**'
+      - 'fonts/**'
       - 'tests/**'
       - 'package.json'
       - '.node-version'
@@ -17,6 +18,7 @@ on:
       - 'README.md'
       - 'profile.json'
       - 'scripts/**'
+      - 'fonts/**'
       - 'tests/**'
       - 'assets/**'
       - 'data/**'
@@ -87,7 +89,8 @@ jobs:
           PROFILE_BRANCH: ${{ github.event.repository.default_branch }}
         run: |
           git add -- README.md data/contributions.json \
-            assets/profile-header.svg assets/contributions.svg assets/tech-ecosystem.svg
+            assets/profile-header.svg assets/contributions.svg assets/tech-ecosystem.svg \
+            assets/mobile/profile-header.svg assets/mobile/contributions.svg assets/mobile/tech-ecosystem.svg
           if git diff --cached --quiet; then
             echo 'No generated changes'
             exit 0
