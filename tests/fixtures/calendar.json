@@ -1682,6 +1682,9 @@
             }
           ]
         }
+      },
+      "repositories": {
+        "nodes": []
       }
     }
   }

@@ -2,11 +2,11 @@
   "login": "JamesonHenrique",
   "name": "Jameson Henrique",
   "location": "Natal/RN, Brasil",
-  "role": "Desenvolvimento Full Stack",
-  "headline": "APIs, interfaces e integrações.",
+  "role": "FULL STACK · JAVA / SPRING BOOT · ANGULAR",
+  "headline": "APIs, interfaces e automação, em Natal/RN",
   "summary": "Desenvolvo APIs, interfaces e integrações. Minha base é Java com Spring Boot e TypeScript com Angular, com experiência em automação de processos.",
   "education": "Bacharelado em TI · UFRN · em andamento",
-  "availability": "Aberto a oportunidades",
+  "availability": "Disponível",
   "focus": [
     "Java / Spring Boot",
     "TypeScript / Angular",
@@ -27,7 +27,7 @@
     "note": "IA como ferramenta de desenvolvimento; automação como parte da solução.",
     "groups": [
       {
-        "title": "IA e automação",
+        "title": "IA e agentes",
         "note": "Integrar processos",
         "items": [
           "Make · n8n",
@@ -109,9 +109,11 @@
   },
   "presentation": {
     "mobileBreakpoint": 600,
-    "terminal": "Java + Angular + automação",
-    "projectsLabel": "PROJETOS",
-    "stackSubtitle": "As tecnologias com que construo software."
+    "terminal": "BTI na UFRN · em formação",
+    "projectsLabel": "ABERTOS",
+    "stackSubtitle": "as tecnologias com que eu construo software",
+    "contactLabel": "linkedin.com/in/jamesonhenrique",
+    "stackKicker": "FULL STACK · INTEGRAÇÕES"
   },
   "themes": {
     "light": {
@@ -137,25 +139,25 @@
       ]
     },
     "dark": {
-      "background": "#0C0C0F",
-      "surface": "#141417",
-      "text": "#F4F4F6",
-      "muted": "#A2A1AD",
-      "accent": "#B388F5",
-      "border": "#29282F",
-      "signal": "#49CBA2",
+      "background": "#0B0B0C",
+      "surface": "#121214",
+      "text": "#F4F4F5",
+      "muted": "#A1A1AA",
+      "accent": "#F5A623",
+      "border": "#222226",
+      "signal": "#34D399",
       "groupAccents": [
-        "#B388F5",
-        "#7EBEF5",
-        "#49CBA2",
-        "#EFC398"
+        "#F5A623",
+        "#79C0FF",
+        "#34D399",
+        "#FACF9E"
       ],
       "heat": [
-        "#25232C",
-        "#443052",
-        "#704798",
-        "#A574D5",
-        "#D1ADF4"
+        "#222226",
+        "#5C3D12",
+        "#A56B14",
+        "#F5A623",
+        "#FACF9E"
       ]
     }
   }

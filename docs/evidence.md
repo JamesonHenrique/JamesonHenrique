@@ -43,3 +43,13 @@ A implementação própria passa a usar essa organização com o conteúdo de Ja
 O README agora começa diretamente pelos três módulos visuais. Contatos e projetos clicáveis vêm depois; o texto acessível completo fica em uma seção expansível. A versão móvel mantém as mesmas superfícies e cores, com projetos abaixo da apresentação, métricas em duas colunas, barras mensais e stack em uma grade 2 × 2.
 
 A revisão passou nos **22 testes**, incluindo a ordem e continuidade dos módulos, e na geração repetida sem alterações. Foram feitas novas capturas em claro/escuro a 1100/390/320px e verificados os limites de todos os textos dos 12 SVGs. Não houve alteração no snapshot ou no workflow de atualização.
+
+## Revisão final solicitada: somente três SVGs
+
+Após rejeitar também a segunda composição, Jameson pediu explicitamente a estrutura visual da referência, incluindo os três SVGs e animações. Essa orientação substitui as preferências iniciais de identidade original, roxo e ausência de animações nesta revisão. O README passa a conter apenas as três imagens, sem blocos Markdown, detalhes ou rodapé visível; os dados essenciais permanecem em `alt`, `title` e `desc`.
+
+Foram reexaminados o README real, os três SVGs e o gerador da mesma revisão `224c0501b3234f44348de66e4e037a6b61ba0a99` da referência. A apresentação usa agora as dimensões 960×308, 960×327 e 960×236, paleta preta/âmbar, carrossel de repositórios públicos recentes com datas reais, cursor e indicadores animados, calendário e os quatro cartões nas mesmas posições. As saídas anteriores com doze variantes foram removidas. A implementação do gerador continua própria; não foi encontrada licença na referência para reutilização direta do código-fonte.
+
+O trecho citado pelo usuário com 9.739 contribuições corresponde ao autor em outra data. Não é dado de Jameson. A API de Jameson foi consultada novamente e o calendário e os repositórios publicados vêm dessa resposta. O snapshot agora inclui níveis de intensidade oficiais e apenas os cinco nomes públicos e datas usados pelo carrossel.
+
+A validação desta revisão inclui 24 testes offline, duas gerações idênticas, estrutura XML dos três SVGs, renderização no Chromium, cinco instantes do carrossel e a alternativa com movimento reduzido. A versão móvel agora escala os mesmos três SVGs, seguindo a referência, em vez de usar uma composição independente.

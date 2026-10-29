@@ -4,11 +4,14 @@ import { normalizeCalendar, periodFor } from './calendar.mjs';
 export const query = `query ProfileCalendar($login: String!, $from: DateTime!, $to: DateTime!) {
   user(login: $login) {
     login
+    repositories(first: 30, privacy: PUBLIC, ownerAffiliations: OWNER, isFork: false, orderBy: {field: PUSHED_AT, direction: DESC}) {
+      nodes { name pushedAt isPrivate isFork isArchived }
+    }
     contributionsCollection(from: $from, to: $to) {
       startedAt endedAt
       contributionCalendar {
         totalContributions
-        weeks { contributionDays { date contributionCount } }
+        weeks { contributionDays { date contributionCount contributionLevel } }
       }
     }
   }
@@ -44,6 +47,7 @@ export async function fetchCalendar({ login, token, queriedOn, fetchImpl = fetch
       if (retryable && attempt < 2) { await sleep(1000 * 2 ** attempt); continue; }
       throw new Error(`GitHub GraphQL errors${retryable ? ' (transient/rate limited)' : ' (check token permissions and query)'}`);
     }
+    if (!Array.isArray(payload?.data?.user?.repositories?.nodes)) throw new Error('GitHub public repositories missing');
     return normalizeCalendar(payload, { login, queriedOn, from, to });
   }
 }

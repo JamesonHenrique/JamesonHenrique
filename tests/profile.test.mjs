@@ -113,12 +113,12 @@ test('SVG escapes text/attributes, wraps long tokens and has no executable/exter
   assert.deepEqual(wrap('abcdefghij', 4), ['abcd', 'efgh', 'ij']);
   const p = structuredClone(profile); p.name = '<script>&"\'';
   const assets = renderAssets(p, snapshot());
-  assert.equal(Object.keys(assets).length, 12);
+  assert.equal(Object.keys(assets).length, 3);
   for (const svg of Object.values(assets)) {
     assert(svg.includes('<title id="title">')); assert(svg.includes('<desc id="desc">')); assert(svg.includes('viewBox='));
     assert(!/<script|foreignObject|\bonload=|(?:href|src)=/.test(svg));
   }
-  assert(assets['assets/intro-light-mobile.svg'].includes('&lt;script&gt;&amp;&quot;&apos;'));
+  assert(assets['assets/profile-header.svg'].includes('&lt;script&gt;&amp;&quot;&apos;'));
 });
 test('README update preserves manual regions, requires unique ordered markers and is idempotent', () => {
   const updated = updateReadme(manual, 'new');
@@ -131,12 +131,12 @@ test('content hash is stable; only modified modules change their cache versions'
   const a = renderAssets(p, s), r = renderReadme(p, s, a);
   p.name = 'A different name';
   const b = renderAssets(p, s);
-  for (const file of Object.keys(a)) assert.equal(hash(a[file]) === hash(b[file]), !file.includes('intro-'));
+  for (const file of Object.keys(a)) assert.equal(hash(a[file]) === hash(b[file]), !file.includes('profile-header'));
   assert.equal(r, renderReadme(profile, s, renderAssets(profile, s)));
-  assert(r.includes(`?v=${hash(a['assets/intro-dark-mobile.svg'])}`));
+  assert(r.includes(`-${hash(a['assets/profile-header.svg'])}`));
   s.days[0].count++;
   const c = renderAssets(profile, s);
-  for (const file of Object.keys(a)) assert.equal(hash(a[file]) === hash(c[file]), !file.includes('activity-'));
+  for (const file of Object.keys(a)) assert.equal(hash(a[file]) === hash(c[file]), !file.includes('contributions'));
 });
 test('same config/data produce byte-identical SVGs and README', () => {
   assert.deepEqual(build(profile, { ...snapshot(), login: profile.login }, manual), build(structuredClone(profile), { ...snapshot(), login: profile.login }, manual));
@@ -154,7 +154,7 @@ async function sandbox(t) {
 test('offline generation twice is a no-op; unrelated files are preserved', async t => {
   const directory = await sandbox(t);
   await writeFile(path.join(directory, 'unrelated.txt'), 'keep');
-  assert.equal((await generate({ directory })).length, 13);
+  assert.equal((await generate({ directory })).length, 4);
   assert.deepEqual(await generate({ directory }), []);
   assert.deepEqual(await generate({ directory, check: true }), []);
   assert.equal(await readFile(path.join(directory, 'unrelated.txt'), 'utf8'), 'keep');
@@ -181,18 +181,35 @@ test('invalid README prevents a successful API result from overwriting snapshot'
   await assert.rejects(update({ directory, token: 'test-placeholder', now: new Date('2024-03-02'), fetchImpl: async () => reply(fixture) }));
   assert.equal(await readFile(path.join(directory, 'data/contributions.json'), 'utf8'), before);
 });
-test('compact README keeps introduction, activity and ecosystem together, followed by clickable projects and accessible text', () => {
+test('README has exactly the three SVGs in reference order, with clickable header and activity', () => {
   const s = snapshot(), assets = renderAssets(profile, s), readme = renderReadme(profile, s, assets);
-  assert(readme.startsWith('<picture>'));
-  assert.equal((readme.match(/<picture>/g) ?? []).length, 3);
-  const intro = readme.indexOf('intro-light-desktop.svg');
-  const activity = readme.indexOf('activity-light-desktop.svg');
-  const stack = readme.indexOf('stack-light-desktop.svg');
-  assert(intro < activity && activity < stack);
-  assert(readme.indexOf('### Projetos') > stack);
-  assert(readme.includes('<details>') && readme.includes(profile.summary));
-  for (const project of profile.projects) {
-    assert(readme.includes(`](${project.url})`));
-    assert(assets['assets/intro-dark-desktop.svg'].includes(project.name));
-  }
+  assert(readme.startsWith('<div align="center">'));
+  assert.equal((readme.match(/<img /g) ?? []).length, 3);
+  assert(!/<picture|<details|###/.test(readme));
+  assert(readme.indexOf('profile-header.svg') < readme.indexOf('contributions.svg'));
+  assert(readme.indexOf('contributions.svg') < readme.indexOf('tech-ecosystem.svg'));
+  assert(readme.includes(profile.links[0].url));
+  assert(readme.includes(profile.summary));
+  assert(readme.includes(profile.education));
+});
+test('public repository selection excludes private, forked, archived and profile repositories', () => {
+  const p = structuredClone(fixture);
+  p.data.user.repositories.nodes = [
+    { name: 'public-project', pushedAt: '2024-03-01T12:00:00Z', isPrivate: false, isFork: false, isArchived: false },
+    { name: 'private-project', pushedAt: '2024-03-01T12:00:00Z', isPrivate: true, isFork: false, isArchived: false },
+    { name: 'fork-project', pushedAt: '2024-03-01T12:00:00Z', isPrivate: false, isFork: true, isArchived: false },
+    { name: 'FixtureUser', pushedAt: '2024-03-01T12:00:00Z', isPrivate: false, isFork: false, isArchived: false }
+  ];
+  const s = normalizeCalendar(p, context);
+  assert.deepEqual(s.publicRepos, [{ name: 'public-project', pushedAt: '2024-03-01T12:00:00Z' }]);
+  assert(!JSON.stringify(publicSnapshot(s)).includes('private-project'));
+});
+test('header carousel has local animation, fade mask and reduced-motion fallback', () => {
+  const s = snapshot();
+  s.publicRepos = ['one', 'two', 'three', 'four', 'five'].map(name => ({ name, pushedAt: '2024-03-01T12:00:00Z' }));
+  const svg = renderAssets(profile, s)['assets/profile-header.svg'];
+  assert.equal((svg.match(/<animateTransform /g) ?? []).length, 5);
+  assert(svg.includes('prefers-reduced-motion:reduce'));
+  assert(svg.includes('mask="url(#fade-mask)"'));
+  assert(svg.includes('dur="15s"'));
 });
