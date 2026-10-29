@@ -27,3 +27,9 @@ A implementação consultada contém três SVGs, `profile.json` com quatro grupo
 Não há `LICENSE` na árvore consultada e a API não reconhece licença. Ausência de licença não concede autorização de reutilização: **nenhum código, SVG, texto biográfico ou identidade visual foi copiado**. Esta implementação foi escrita do zero. O crédito acima registra a inspiração da arquitetura.
 
 A identidade usa uma sequência editorial de três módulos, divisórias, tipografia sem recursos externos e roxo com contraste em fundos próprios. Não há animação, badges ou indicadores de proficiência. O celular usa outra composição e outra visualização de atividade; o texto essencial e os links continuam no Markdown.
+
+## Validação da entrega
+
+[CI de push](https://github.com/JamesonHenrique/JamesonHenrique/actions/runs/40952177360) e [CI do PR](https://github.com/JamesonHenrique/JamesonHenrique/actions/runs/40952199953) concluíram com sucesso. Foram **21 testes offline**, checagem das saídas e geração idempotente. A consulta real no Actions com o token padrão e `contents: read` retornou os mesmos dados agregados do snapshot inicial (zero saídas alteradas), sem secret adicional. O job que escreve na branch padrão foi corretamente ignorado na branch de revisão; o commit automático diário só poderá executar após o merge.
+
+Localmente, `actionlint` **1.7.12** passou, os 12 SVGs foram analisados como XML, as capturas em Chromium confirmaram seleção das variantes e ausência de rolagem horizontal em 1100/390/320px, e os limites de texto dos SVGs foram verificados. A inspeção visual dos temas claro e escuro não encontrou cortes ou sobreposições; um conflito inicial entre rótulos dos meses foi corrigido antes da entrega. O renderizador Markdown oficial preservou os três blocos responsivos.
