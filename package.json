@@ -1,0 +1,13 @@
+{
+  "name": "jameson-github-profile",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24 <25" },
+  "scripts": {
+    "test": "node --test",
+    "generate": "node scripts/generate.mjs",
+    "update": "node scripts/update.mjs",
+    "check": "node scripts/generate.mjs --check",
+    "preview": "node scripts/preview.mjs"
+  }
+}
