@@ -2,15 +2,15 @@
   "login": "JamesonHenrique",
   "name": "Jameson Henrique",
   "location": "Natal/RN, Brasil",
-  "role": "FULL STACK · JAVA / SPRING BOOT · ANGULAR",
-  "headline": "APIs, interfaces e automação, em Natal/RN",
-  "summary": "Desenvolvo APIs, interfaces e integrações. Minha base é Java com Spring Boot e TypeScript com Angular, com experiência em automação de processos.",
+  "role": "DESENVOLVEDOR JÚNIOR · JAVA · SPRING BOOT · ANGULAR",
+  "headline": "BTI/UFRN · APIs REST · Integrações · Disponível",
+  "summary": "Estudante de BTI na UFRN, com foco em desenvolvimento júnior usando Java/Spring Boot e Angular/TypeScript. Experiência anterior em integrações REST, webhooks e automação; disponível para oportunidades.",
   "education": "Bacharelado em TI · UFRN · em andamento",
   "availability": "Disponível",
   "focus": [
-    "Java / Spring Boot",
-    "TypeScript / Angular",
-    "APIs / Integrações"
+    "Java · Spring Boot",
+    "Angular · TypeScript",
+    "APIs · Integrações"
   ],
   "links": [
     {

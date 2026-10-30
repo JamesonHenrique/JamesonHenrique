@@ -4,8 +4,8 @@
 
 <a href="https://www.linkedin.com/in/jamesonhenrique/">
   <picture>
-  <source media="(max-width: 600px)" srcset="./assets/mobile/profile-header.svg?v=2026-10-30-959-2ebd9517e76b3307">
-  <img src="./assets/profile-header.svg?v=2026-10-30-959-c18da59201677ef6" alt="Jameson Henrique. FULL STACK · JAVA / SPRING BOOT · ANGULAR. Desenvolvo APIs, interfaces e integrações. Minha base é Java com Spring Boot e TypeScript com Angular, com experiência em automação de processos. Bacharelado em TI · UFRN · em andamento. Natal/RN, Brasil. Disponível. LinkedIn: https://www.linkedin.com/in/jamesonhenrique/. Repositórios públicos: OportunizaVaga, Portfolio, helpmydesk, Newgram, n8n-telegram-multitool-bot." width="100%" />
+  <source media="(max-width: 600px)" srcset="./assets/mobile/profile-header.svg?v=2026-10-30-959-4f79fdb227752899">
+  <img src="./assets/profile-header.svg?v=2026-10-30-959-f184da2248a10f55" alt="Jameson Henrique. DESENVOLVEDOR JÚNIOR · JAVA · SPRING BOOT · ANGULAR. Estudante de BTI na UFRN, com foco em desenvolvimento júnior usando Java/Spring Boot e Angular/TypeScript. Experiência anterior em integrações REST, webhooks e automação; disponível para oportunidades. Bacharelado em TI · UFRN · em andamento. Natal/RN, Brasil. Disponível. LinkedIn: https://www.linkedin.com/in/jamesonhenrique/. Repositórios públicos: OportunizaVaga, Portfolio, helpmydesk, Newgram, n8n-telegram-multitool-bot." width="100%" />
 </picture>
 </a>
 
