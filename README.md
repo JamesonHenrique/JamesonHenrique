@@ -13,8 +13,8 @@
 
 <a href="https://github.com/JamesonHenrique">
   <picture>
-  <source media="(max-width: 600px)" srcset="./assets/mobile/contributions.svg?v=2026-10-29-943-3791f7f2b1c0e085">
-  <img src="./assets/contributions.svg?v=2026-10-29-943-cc8134169d0d2dad" alt="943 contribuições; 44 dias ativos; pico de 169 em 15/10/2026. Período: 29/10/2025 a 28/10/2026. Última consulta: 29/10/2026 UTC. Contribuições registradas no GitHub. Não medem produtividade ou experiência." width="100%" />
+  <source media="(max-width: 600px)" srcset="./assets/mobile/contributions.svg?v=2026-10-29-943-390f8610b792b359">
+  <img src="./assets/contributions.svg?v=2026-10-29-943-1fb2c56a57a45479" alt="943 contribuições; 44 dias ativos; pico de 169 em 15/10/2026. Período: 29/10/2025 a 28/10/2026. Última consulta: 29/10/2026 UTC. Contribuições registradas no GitHub. Não medem produtividade ou experiência." width="100%" />
 </picture>
 </a>
 
