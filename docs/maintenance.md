@@ -4,7 +4,7 @@ O README é composto exclusivamente por três SVGs: `assets/profile-header.svg` 
 
 A estrutura de três painéis aprovada foi preservada. A identidade atual usa preto com matiz violeta, roxo/lilás, grid discreto, monograma derivado do nome e bordas suaves. Space Grotesk, Manrope e IBM Plex Mono são incorporadas como contornos vetoriais, com licenças OFL preservadas: não dependem de fontes instaladas ou carregamento externo. Consulte [a manutenção das fontes](../fonts/README.md).
 
-O README continua mostrando três painéis. O desktop mantém os três SVGs principais; `assets/mobile/` contém três versões específicas para telas pequenas. O `<picture>` escolhe a versão conforme o breakpoint de `profile.json`. No celular, apresentação empilhada, métricas maiores, barras mensais e stack em 2×2. A adaptação exige arquivos extras, mas evita reduzir as quatro colunas até ficarem ilegíveis. O carrossel tem alternativa estática para movimento reduzido.
+O README continua mostrando três painéis. O desktop mantém os três SVGs principais; `assets/mobile/` contém três versões específicas para telas pequenas. O `<picture>` escolhe a versão conforme o breakpoint de `profile.json`. No celular, apresentação empilhada, métricas em duas colunas, calendário diário em duas faixas e stack em 2×2. A adaptação exige arquivos extras, mas evita reduzir as quatro colunas até ficarem ilegíveis. O carrossel tem alternativa estática para movimento reduzido.
 
 ## Editar, testar e gerar
 
@@ -56,7 +56,7 @@ As condições de largura pertencem ao `<picture>` do README, com SVGs distintos
 
 Foi testada uma alternativa com duas vistas no mesmo SVG para manter três arquivos, mas o WebKit não respeitou a proporção móvel com URLs versionadas. A solução com `assets/mobile/` foi escolhida por funcionar de forma consistente nos três motores testados.
 
-A composição móvel contém meses parciais nas bordas; suas barras somam exatamente as mesmas contagens diárias do calendário desktop. O período e a data de consulta são os mesmos nas duas composições.
+O painel de atividade preserva o estilo de calendário da referência, com números compactos e tipografia sem rótulos monoespaçados. No celular, as semanas são divididas em duas faixas; cada data aparece exatamente uma vez, com a mesma contagem e intensidade do desktop. O período e a data de consulta são os mesmos nas duas composições.
 
 O gerador mede avanços reais dos glifos para cortar nomes longos de repositórios e quebrar linhas no celular. Referências `<use href="#font-…">` são internas e todos os glifos necessários são incluídos em `<defs>`. O metadata de cada SVG contém as licenças das famílias. Arquivos em `fonts/` acionam os checks de geração no Actions.
 

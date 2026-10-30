@@ -31,7 +31,7 @@ function rect(x, y, w, h, fill, radius = 0, stroke) {
   return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${radius}" fill="${fill}"${stroke ? ` stroke="${stroke}"` : ''}/>`;
 }
 function panelBackground(width, height, t) {
-  return rect(0, 0, width, height, t.background, 18) + rect(0, 0, width, height, 'url(#halo)', 18) + rect(0, 0, width, height, 'url(#grid)', 18) + rect(0.5, 0.5, width - 1, height - 1, 'none', 18, t.border);
+  return rect(0, 0, width, height, t.background, 18) + (t.flat ? '' : rect(0, 0, width, height, 'url(#halo)', 18)) + rect(0, 0, width, height, 'url(#grid)', 18) + rect(0.5, 0.5, width - 1, height - 1, 'none', 18, t.border);
 }
 function shell(height, title, description, t, content, mobile) {
   const width = t.mobile ? 400 : 960;
@@ -115,26 +115,16 @@ export function renderStack(p, t) {
   }
   return shell(236 + extraHeight, 'Ecossistema', `${p.stack.note} ${p.stack.groups.map(g => `${g.title}: ${g.items.join(', ')}`).join('. ')}`, t, body, mobileStack(p, t));
 }
-export function renderActivity(p, snapshot, t) {
+export function renderActivity(p, snapshot, theme) {
+  const t = { ...theme, flat: true, typography: { ...theme.typography, display: theme.typography.strong, mono: theme.typography.body } };
   const m = metrics(snapshot);
   let body = rect(28, 24, 92, 4, t.accent, 2);
   body += text(28, 52, p.activity.title.toUpperCase(), 18, t.text, 700, 'letter-spacing="0.8"');
   body += text(28, 72, 'contribuições diárias · 365 dias completos', 13, t.muted);
   body += statusDot(746, 40, t) + text(758, 44, 'ATUALIZADO DIARIAMENTE', 11, t.signal, 700, 'letter-spacing="0.8"');
   const values = [[number(m.total), 'TOTAL NO PERÍODO'], [number(m.active), 'DIAS ATIVOS'], [number(m.peak?.count ?? 0), m.peak ? `PICO · ${shortDate(m.peak.date)}` : 'SEM DIA DE PICO'], [number(snapshot.days.at(-1).count), `ÚLTIMO · ${shortDate(snapshot.to)}`]];
-  [28, 250, 430, 650].forEach((x, i) => { body += text(x, 104, values[i][0], 31, t.text, 700) + text(x, 124, values[i][1], 10, t.muted, 600, 'letter-spacing="0.7"'); });
-  const offset = new Date(dateValue(snapshot.from)).getUTCDay();
-  const step = 861 / 52, seen = new Set();
-  snapshot.days.forEach((d, i) => {
-    const column = Math.floor((i + offset) / 7), row = (i + offset) % 7;
-    if (!seen.has(d.date.slice(0, 7)) && row === 0 && Number(d.date.slice(8)) <= 7) {
-      seen.add(d.date.slice(0, 7));
-      body += text(58 + column * step, 156, monthNames[Number(d.date.slice(5, 7)) - 1], 11, t.muted);
-    }
-    const level = d.level ? ['NONE', 'FIRST_QUARTILE', 'SECOND_QUARTILE', 'THIRD_QUARTILE', 'FOURTH_QUARTILE'].indexOf(d.level) : d.count ? Math.max(1, Math.ceil(d.count / m.peak.count * 4)) : 0;
-    body += `<g><title>${d.date}: ${d.count} contribuições</title>${rect(58 + column * step, 172 + row * step, 13, 13, t.heat[level], 2)}</g>`;
-  });
-  [['Seg', 1], ['Qua', 3], ['Sex', 5]].forEach(([label, row]) => { body += text(24, 182 + row * step, label, 11, t.muted); });
+  [28, 250, 430, 650].forEach((x, i) => { body += text(x, 104, values[i][0], 26, t.text, 700) + text(x, 124, values[i][1], 10, t.muted, 600, 'letter-spacing="0.7"'); });
+  body += dailyCalendar(snapshot, t, { x: 58, y: 172, step: 861 / 52, size: 13, firstWeek: 0, weekCount: 54, labelSize: 11, axisX: 24 });
   body += text(28, 307, `${formatDate(snapshot.from)}–${formatDate(snapshot.to)} · consulta ${formatDate(snapshot.queriedOn)} UTC`, 11, t.muted);
   body += text(792, 307, 'Menos', 11, t.muted);
   t.heat.forEach((c, i) => { body += rect(828 + i * 16, 297, 11, 11, c, 2); });
@@ -214,30 +204,41 @@ function mobileStack(p, t) {
   }
   return { height: y + 10, content };
 }
+function dailyCalendar(snapshot, t, { x, y, step, size, firstWeek, weekCount, labelSize, axisX }) {
+  const offset = new Date(dateValue(snapshot.from)).getUTCDay(), peak = metrics(snapshot).peak?.count ?? 0;
+  const seen = new Set();
+  let body = '';
+  snapshot.days.forEach((day, index) => {
+    const week = Math.floor((index + offset) / 7), row = (index + offset) % 7;
+    if (week < firstWeek || week >= firstWeek + weekCount) return;
+    const column = week - firstWeek, month = day.date.slice(0, 7);
+    if (!seen.has(month) && row === 0 && Number(day.date.slice(8)) <= 7) {
+      seen.add(month);
+      body += text(x + column * step, y - 16, monthNames[Number(day.date.slice(5, 7)) - 1], labelSize, t.muted);
+    }
+    const level = day.level ? ['NONE', 'FIRST_QUARTILE', 'SECOND_QUARTILE', 'THIRD_QUARTILE', 'FOURTH_QUARTILE'].indexOf(day.level) : day.count ? Math.max(1, Math.ceil(day.count / Math.max(1, peak) * 4)) : 0;
+    body += `<g data-day="${day.date}" data-count="${day.count}"><title>${day.date}: ${day.count} contribuições</title>${rect(x + column * step, y + row * step, size, size, t.heat[level], 2)}</g>`;
+  });
+  [['Seg', 1], ['Qua', 3], ['Sex', 5]].forEach(([label, row]) => { body += text(axisX, y + 10 + row * step, label, labelSize, t.muted); });
+  return body;
+}
 function mobileActivity(p, s, t) {
   const m = metrics(s);
   let content = rect(24, 23, 85, 3, t.accent, 1.5) + text(24, 58, p.activity.title.toUpperCase(), 22, t.text, 700);
-  content += text(24, 84, '365 dias completos no GitHub', 16, t.muted);
-  const values = [[number(m.total), 'CONTRIBUIÇÕES'], [number(m.active), 'DIAS ATIVOS'], [number(m.peak?.count ?? 0), m.peak ? `PICO · ${shortDate(m.peak.date)}` : 'SEM DIA DE PICO'], [number(s.days.at(-1).count), `ÚLTIMO · ${shortDate(s.to)}`]];
+  content += text(24, 84, 'Contribuições diárias · 365 dias completos', 15, t.muted);
+  const values = [[number(m.total), 'Total no período'], [number(m.active), 'Dias ativos'], [number(m.peak?.count ?? 0), m.peak ? `Pico · ${shortDate(m.peak.date)}` : 'Sem dia de pico'], [number(s.days.at(-1).count), `Último · ${shortDate(s.to)}`]];
   values.forEach(([value, label], i) => {
-    const x = 24 + i % 2 * 184, y = 131 + Math.floor(i / 2) * 77;
-    content += text(x, y, value, 35, t.text, 700);
-    content += text(x, y + 25, label, 12, t.muted, 500);
+    const x = 24 + i % 2 * 184, y = 133 + Math.floor(i / 2) * 72;
+    content += text(x, y, value, 29, t.text, 700);
+    content += text(x, y + 24, label, 14, t.muted);
   });
-  let y = 278;
-  content += text(24, y, 'CONTRIBUIÇÕES POR MÊS', 12, t.muted, 500, 'letter-spacing="0.4"');
-  y += 33;
-  const max = Math.max(1, ...m.months.map(v => v.total));
-  for (const { month, total } of m.months) {
-    content += text(24, y, `${month.slice(5)}/${month.slice(0, 4)}`, 16, t.muted);
-    content += rect(105, y - 13, 204, 13, t.surface, 3);
-    if (total) content += rect(105, y - 13, Math.max(2, 204 * total / max), 13, t.accent, 3);
-    content += text(376, y, number(total), 16, t.text, 400, 'text-anchor="end"');
-    y += 25;
-  }
-  content += text(24, y + 4, 'Meses nas bordas podem ser parciais.', 15, t.muted);
-  y += 35;
-  content += text(24, y, `${formatDate(s.from)} a ${formatDate(s.to)}`, 16, t.muted);
-  content += text(24, y + 27, `Consulta: ${formatDate(s.queriedOn)} UTC`, 16, t.muted);
-  return { height: y + 54, content };
+  const options = { x: 52, step: 12, size: 9, weekCount: 27, labelSize: 12, axisX: 24 };
+  content += dailyCalendar(s, t, { ...options, y: 270, firstWeek: 0 });
+  content += dailyCalendar(s, t, { ...options, y: 394, firstWeek: 27 });
+  content += text(24, 500, 'Menos', 13, t.muted);
+  t.heat.forEach((color, i) => { content += rect(73 + i * 17, 489, 12, 12, color, 2); });
+  content += text(164, 500, 'Mais', 13, t.muted);
+  content += text(24, 536, `${formatDate(s.from)} a ${formatDate(s.to)}`, 15, t.muted);
+  content += text(24, 562, `Consulta: ${formatDate(s.queriedOn)} UTC`, 15, t.muted);
+  return { height: 586, content };
 }

@@ -229,3 +229,14 @@ test('additional configured stack technologies remain visible and expand their p
   const height = Number(assets['assets/tech-ecosystem.svg'].match(/viewBox="0 0 960 (\d+)"/)[1]);
   assert(height > 236);
 });
+test('desktop and mobile activity calendars render every date once with identical counts', () => {
+  const s = snapshot(), assets = renderAssets(profile, s);
+  const readDays = svg => [...svg.matchAll(/data-day="([^"]+)" data-count="(\d+)"/g)].map(m => ({ date: m[1], count: Number(m[2]) }));
+  for (const file of ['assets/contributions.svg', 'assets/mobile/contributions.svg']) {
+    const days = readDays(assets[file]);
+    assert.equal(days.length, 365);
+    assert.equal(new Set(days.map(day => day.date)).size, 365);
+    assert.deepEqual(days, s.days.map(({ date, count }) => ({ date, count })));
+    assert(days.some(day => day.date === '2024-02-29'));
+  }
+});
