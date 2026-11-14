@@ -1,12 +1,12 @@
 {
   "login": "JamesonHenrique",
   "name": "Jameson Henrique",
-  "location": "Natal/RN, Brasil",
-  "role": "DESENVOLVEDOR JÚNIOR · JAVA · SPRING BOOT · ANGULAR",
-  "headline": "BTI/UFRN · APIs REST · Integrações · Disponível",
-  "summary": "Estudante de BTI na UFRN, com foco em desenvolvimento júnior usando Java/Spring Boot e Angular/TypeScript. Experiência anterior em integrações REST, webhooks e automação; disponível para oportunidades.",
+  "location": "Parazinho/RN, Brasil",
+  "role": "DESENVOLVEDOR FULL STACK",
+  "headline": "Wolfacilitates C&M · BTI/UFRN · TypeScript · Java",
+  "summary": "Desenvolvedor Full Stack e Responsável por Tecnologia na Wolfacilitates, com atuação no planejamento, desenvolvimento e evolução de soluções digitais. Estudante de BTI no IMD/UFRN, com base em Java/Spring Boot e Angular/TypeScript e experiência anterior em automações e integrações em LegalOps.",
   "education": "Bacharelado em TI · UFRN · em andamento",
-  "availability": "Disponível",
+  "availability": "Na Wolfacilitates C&M",
   "focus": [
     "Java · Spring Boot",
     "Angular · TypeScript",

@@ -4,8 +4,8 @@
 
 <a href="https://www.linkedin.com/in/jamesonhenrique/">
   <picture>
-  <source media="(max-width: 600px)" srcset="./assets/mobile/profile-header.svg?v=2026-11-04-964-c6d5106184cfdece">
-  <img src="./assets/profile-header.svg?v=2026-11-04-964-62c438659d287dfd" alt="Jameson Henrique. DESENVOLVEDOR JÚNIOR · JAVA · SPRING BOOT · ANGULAR. Estudante de BTI na UFRN, com foco em desenvolvimento júnior usando Java/Spring Boot e Angular/TypeScript. Experiência anterior em integrações REST, webhooks e automação; disponível para oportunidades. Bacharelado em TI · UFRN · em andamento. Natal/RN, Brasil. Disponível. LinkedIn: https://www.linkedin.com/in/jamesonhenrique/. Repositórios públicos: OportunizaVaga, Portfolio, Newgram, helpmydesk, n8n-telegram-multitool-bot." width="100%" />
+  <source media="(max-width: 600px)" srcset="./assets/mobile/profile-header.svg?v=2026-11-04-964-4d9117c600f43298">
+  <img src="./assets/profile-header.svg?v=2026-11-04-964-68f5430f0ac9a61c" alt="Jameson Henrique. DESENVOLVEDOR FULL STACK. Desenvolvedor Full Stack e Responsável por Tecnologia na Wolfacilitates, com atuação no planejamento, desenvolvimento e evolução de soluções digitais. Estudante de BTI no IMD/UFRN, com base em Java/Spring Boot e Angular/TypeScript e experiência anterior em automações e integrações em LegalOps. Bacharelado em TI · UFRN · em andamento. Parazinho/RN, Brasil. Na Wolfacilitates C&amp;M. LinkedIn: https://www.linkedin.com/in/jamesonhenrique/. Repositórios públicos: OportunizaVaga, Portfolio, Newgram, helpmydesk, n8n-telegram-multitool-bot." width="100%" />
 </picture>
 </a>
 
