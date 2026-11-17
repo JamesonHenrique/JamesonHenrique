@@ -2,15 +2,10 @@
   "version": 1,
   "source": "github-graphql",
   "login": "JamesonHenrique",
-  "queriedOn": "2026-11-16",
-  "from": "2025-11-16",
-  "to": "2026-11-15",
+  "queriedOn": "2026-11-17",
+  "from": "2025-11-17",
+  "to": "2026-11-16",
   "days": [
-    {
-      "date": "2025-11-16",
-      "count": 0,
-      "level": "NONE"
-    },
     {
       "date": "2025-11-17",
       "count": 0,
@@ -1828,6 +1823,11 @@
     },
     {
       "date": "2026-11-15",
+      "count": 0,
+      "level": "NONE"
+    },
+    {
+      "date": "2026-11-16",
       "count": 0,
       "level": "NONE"
     }
